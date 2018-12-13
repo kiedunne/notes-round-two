@@ -1,8 +1,10 @@
 window.addEventListener("load", function() {
   var note = new Note(),
-      noteList = new NoteList(note),
-      noteView = new NoteView(),
-      noteListView = new NoteListView(noteView),
-      controller = new NoteController(noteList, noteListView);
+      list = new NoteList(note),
+      noteView = new NoteView(note),
+      listView = new ListView(list),
+      controller = new NoteController(note, list, noteView,listView);
+      console.log(noteView)
+      console.log(listView)
   controller.updateDOM()
 });
