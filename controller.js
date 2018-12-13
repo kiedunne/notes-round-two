@@ -4,8 +4,10 @@ function NoteController(note, list, noteView, listView) {
   this.list = list
   this.listView = listView
 
+  var input = document.getElementById("text-input");
+
   this.init();
-  
+
 };
 
   NoteController.prototype = {
@@ -14,9 +16,12 @@ function NoteController(note, list, noteView, listView) {
         event.preventDefault()
 
 // Make a note in the note model and send it to note view //
-        var input = document.getElementById("text-input").value;
-        var note = new self.note(input)
 
+        var note = new Note(input.value);
+        var noteList = new List(note);
+        noteList.adddNote();
+
+        self.updateDOM()
 // Add the note to the list in the list model and send it to notelist view //
         // var added_note = this.list.addNote();
         // var new_list = added_note.returnList();
@@ -25,6 +30,7 @@ function NoteController(note, list, noteView, listView) {
     },
 
     updateDOM: function(list) {
-      document.getElementById('note-list').innerHTML = this.noteView.renderNote();
+      document.getElementById('note-list').innerHTML = this.noteView.renderNote()
+      document.getElementById("text-input").value = '';
     }
   };

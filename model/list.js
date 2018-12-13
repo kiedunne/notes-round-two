@@ -1,10 +1,10 @@
 
-function NoteList(note) {
+function List(note) {
   this.list = []
   this.note = note
 };
 
-  NoteList.prototype = {
+  List.prototype = {
     addNote: function() {
       this.list.push(this.note);
     },

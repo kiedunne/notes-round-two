@@ -5,7 +5,10 @@ function NoteView(note) {
 
   NoteView.prototype = {
     renderNote: function() {
-      return "<p>" + this.note.text + "</p>"
+      return "<p>" + this.note + "</p>"
+    },
+    clearInput: function() {
+      document.getElementById("text-input").value = '';
     }
 
   };
