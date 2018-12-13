@@ -6,7 +6,7 @@ function ListView(notelist) {
 ListView.prototype = {
   renderList: function() {
     return this.noteList.map(function(note) {
-      return "<ul>" + note + "<ul>"
+      return "<p>" + note + "</p>"
     }).join('')
   }
 };
