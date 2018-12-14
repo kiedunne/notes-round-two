@@ -1,14 +1,15 @@
 
-function List(note) {
+function List() {
   this.list = []
-  this.note = note
 };
 
   List.prototype = {
-    addNote: function() {
-      this.list.push(this.note);
+
+    addNote: function(text) {
+      var note = new Note(text)
+      this.list.push(note);
     },
-    returnList: function() {
-      return this.list;
+    note: function(text) {
+      this.text = text;
     }
   };

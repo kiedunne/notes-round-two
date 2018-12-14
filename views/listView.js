@@ -1,11 +1,14 @@
 
-function ListView(notelist) {
- this.notelist = notelist.list
-}
+function ListView() {
+
+};
 
 ListView.prototype = {
+
   renderList: function() {
-    return this.noteList.map(function(note) {
+    var html = '';
+    for (note in noteList)  
+    this.noteList.map(function(note) {
       return "<p>" + note + "</p>"
     }).join('')
   }
