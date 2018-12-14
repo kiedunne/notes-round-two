@@ -6,7 +6,9 @@ function NoteView(note) {
   NoteView.prototype = {
     render: function() {
       return [
-        "<p>" + this.note.text + "</p>"
+        "<div>",
+        "<p>" + this.note.text + "</p>",
+        "</div>"
       ].join('')
     }
  };

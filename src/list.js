@@ -12,7 +12,7 @@ function List(note) {
     },
 
     findById: function(id) {
-      return this.notes.find(function(note) {
+      return this.list.find(function(note) {
         return note.id == id
       })
     }

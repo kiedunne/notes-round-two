@@ -10,11 +10,14 @@ ListView.prototype = {
         "<input type='text'></input>",
         "<input type='submit'></input>",
       "</form>",
-      this.noteList.map(function(note) {
+      this.noteList.list.map(function(note) {
       return [
-         "</a href= '#notes/'>" + note.text + note.title "</a"
+        "<div>",
+         "<a href= '#notes/", + note.id + "'>" + note.title() + "</a",
+         "</div>"
       ].join('')
     }).join('')
   ].join('')
   }
+
 }
