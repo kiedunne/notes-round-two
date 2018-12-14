@@ -1,10 +1,9 @@
+// ON LOAD- MAKE CONTROLLER RENDER INITAL LIST VIEW
 window.addEventListener("load", function() {
-  var note = new Note(),
-      list = new List(note),
-      noteView = new NoteView(note),
-      listView = new ListView(list),
-      controller = new NoteController(note, list, noteView,listView);
-      console.log(noteView)
-      console.log(listView)
-  controller.updateDOM()
+  var list = new List(Note)
+  var listView = new ListView(list)
+  var controller = new NoteController(list, listView, NoteView);
+// dont create an instance of note view yet- you'll do that in controller
+  var html = listView.render()
+  controller.render(html)
 });
